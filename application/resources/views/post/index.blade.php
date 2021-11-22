@@ -62,10 +62,14 @@
                                 </div>
 
                                 <a href="{{route('post.show', $post)}}">
-
+                                    
                                     <div class="wrimagecard-topimage_header">
                                         <center>
+                                        @if ($post->featured_image != 'blank.png')
+                                            <img class="img-fluid" src="{{asset('storage/' . $post->featured_image)}}" alt="Project Image"  width="100" height="200">
+                                        @else
                                             <i class="fa fa-bar-chart" style="color:#203478"></i>
+                                        @endif
                                         </center>
                                     </div>
                                     <div class="wrimagecard-topimage_title">

@@ -48,20 +48,44 @@
                                     </div>
                                     @endhasrole
                                 </div>
-                                <a href="{{ route('post.index',['id_project'=>$project->id]) }}">
+                                @if($project->flag_post == 1)
+
+                                @foreach($project->posts as $post)
                                     
-                                    <div class="wrimagecard-topimage_header">
-                                        <center>
-                                            <i class="fa fa-folder" style="color:#203478"></i>
-                                        </center>
-                                    </div>
-                                    <div class="wrimagecard-topimage_title">
-                                        <h4>
-                                            {{ $project->project_name }}
-                                        </h4>
-                                    </div>
+                                    <a href="{{ route('show_post',['id_post'=>$post->id])}}">
+                                        
+                                        <div class="wrimagecard-topimage_header">
+                                            <center>
+                                                <img class="img-fluid" src="{{asset('storage/' . $project->icon)}}" alt="Project Image"  width="100" height="200"> 
+                                            </center>
+                                        </div>
+                                        <div class="wrimagecard-topimage_title">
+                                            <h4>
+                                                {{ $project->project_name }}
+                                             
+                                            </h4>
+                                        </div>
+                                        
+                                    </a>
+                                @endforeach
+                                @else
+                                    <a href="{{ route('post.index',['id_project'=>$project->id]) }}">
+                                        
+                                        <div class="wrimagecard-topimage_header">
+                                            <center>
+                                                <img class="img-fluid" src="{{asset('storage/' . $project->icon)}}" alt="Project Image"  width="100" height="200"> 
+                                            </center>
+                                        </div>
+                                        <div class="wrimagecard-topimage_title">
+                                            <h4>
+                                                {{ $project->project_name }}
+                                            </h4>
+                                        </div>
+                                        
+                                    </a>
                                     
-                                </a>
+                                @endif
+               
                             </div>
 
                         </div>

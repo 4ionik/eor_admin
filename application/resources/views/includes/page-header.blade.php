@@ -1,7 +1,7 @@
-<div class="header bg-primary pb-6">
+<div class="header pb-6"  style="background-color: #036fb7">
     <div class="container-fluid">
         <div class="header-body">
-            <div class="row align-items-center py-2">
+            <div class="row align-items-center py-2" >
                 <div class="col-lg-6 col-5 text-right">
                     @stack('pg_btn')
                 </div>

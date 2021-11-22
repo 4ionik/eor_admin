@@ -87,9 +87,15 @@ class PostController extends Controller
 
     {
         $title = "Detalle de la Vista";
-        $post->with(['project','user']);
+        $post->with(['project','user']);  
+        
+      
         return view('post.show', compact('title', 'post'));
     }
+
+    
+
+
 
     /**
      * Show the form for editing the specified resource.

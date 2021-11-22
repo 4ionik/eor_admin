@@ -89,4 +89,6 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    // <img src="{{asset('storage/' . $user->bill_document)}}" alt="Product Image"> 
+
 ];

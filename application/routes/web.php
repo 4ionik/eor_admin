@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 
-Route::group(['middleware' => ['auth','verified']], function () {
+// Route::group(['middleware' => ['auth','verified']], function () {
 
     // Route::post('/login', 'Auth\LoginController@guest')->name('guest');
 
@@ -36,6 +36,14 @@ Route::group(['middleware' => ['auth','verified']], function () {
         return view('about');
     })->name('about');
 
+    Route::get('/politica',function(){
+        return view('privacy');
+    })->name('politica-privacidad');
+
+    Route::get('/datos',function(){
+        return view('use-policy');
+    })->name('politica-datos');
+
     Route::resource('users', 'UserController');
 
     Route::get('/profile/{user}', 'UserController@profile')->name('profile.edit');
@@ -50,7 +58,10 @@ Route::group(['middleware' => ['auth','verified']], function () {
 
     Route::post('/project/{id}', 'ProjectController@updateAll');
 
-    Route::resource('post', 'PostController'); 
+   
+
+
+    Route::resource('post', 'PostController');   
 
     Route::get('/post/{id_project}', ["uses" => 'PostController@index',"as" => 'single' ])->name('post.index');
 
@@ -58,10 +69,12 @@ Route::group(['middleware' => ['auth','verified']], function () {
 
     Route::get('/settings', 'SettingController@index')->name('settings.index');
 
+    Route::post('/post/{id_post}', 'PostController@show_post')->name('show_post');
+
     Route::post('/settings', 'SettingController@update')->name('settings.update');
 
 
     Route::get('media', function (){
         return view('media.index');
     })->name('media.index');
-});
+// });

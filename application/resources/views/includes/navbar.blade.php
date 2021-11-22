@@ -47,6 +47,18 @@
                             <span class="nav-link-text">Acerca de</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->is('politica*')) ? 'active' : '' }}" href="{{route('politica-privacidad')}}">
+                            <i class="ni ni-collection text-primary_brown"></i>
+                            <span class="nav-link-text">Politica de Privacidad</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->is('datos*')) ? 'active' : '' }}" href="{{route('politica-datos')}}">
+                            <i class="fa fa-info"></i>
+                            <span class="nav-link-text">Uso de Datos</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
