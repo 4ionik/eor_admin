@@ -42,21 +42,33 @@
                         <hr class="my-3">
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ (request()->is('novedades*')) ? 'active' : '' }}" href="{{route('novedades')}}">
+                            <i class="fa fa-plus"></i>
+                            <span class="nav-link-text">Novedades</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ (request()->is('about*')) ? 'active' : '' }}" href="{{route('about')}}">
                             <i class="ni ni-collection text-primary_brown"></i>
-                            <span class="nav-link-text">Acerca de</span>
+                            <span class="nav-link-text">Quiénes Somos</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ (request()->is('politica*')) ? 'active' : '' }}" href="{{route('politica-privacidad')}}">
                             <i class="ni ni-collection text-primary_brown"></i>
-                            <span class="nav-link-text">Politica de Privacidad</span>
+                            <span class="nav-link-text">Condiciones de Uso</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ (request()->is('datos*')) ? 'active' : '' }}" href="{{route('politica-datos')}}">
                             <i class="fa fa-info"></i>
                             <span class="nav-link-text">Uso de Datos</span>
+                        </a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link {{ (request()->is('version*')) ? 'active' : '' }}" href="{{route('version')}}">
+                            <i class="ni ni-app"></i>
+                            <span class="nav-link-text"> Versión de la Aplicación</span>
                         </a>
                     </li>
                 </ul>

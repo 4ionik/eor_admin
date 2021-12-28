@@ -55,6 +55,7 @@
             height: 80px;
             padding-bottom: 0.75rem;
             position: relative;
+            overflow:auto;
             background-color: #EEEEEE;
         }
         .wrimagecard-topimage a {

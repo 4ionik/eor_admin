@@ -44,6 +44,14 @@ Auth::routes(['verify'=>true]);
         return view('use-policy');
     })->name('politica-datos');
 
+    Route::get('/novedades',function(){
+        return view('developments');
+    })->name('novedades');
+
+    Route::get('/version',function(){
+        return view('version');
+    })->name('version');
+
     Route::resource('users', 'UserController');
 
     Route::get('/profile/{user}', 'UserController@profile')->name('profile.edit');

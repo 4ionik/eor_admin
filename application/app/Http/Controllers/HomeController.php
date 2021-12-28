@@ -29,12 +29,12 @@ class HomeController extends Controller
     public function index()
     {
         $projects = Project::with(['user','posts'])->paginate(setting('record_per_page', 15));
-        $title =  'Administrar Proyectos';
+        
 
         // $posts = DB::table('posts')->join('projects','posts.project_id','=','projects.id')
         //         ->select('posts.id')->where('projects.flag_post','=',1)->get();
 
-        return view('home', compact('projects','title'));
+        return view('home', compact('projects'));
     }
 
   

@@ -4,27 +4,6 @@
         <div class="col">
 
             <div class="card">
-                <div class="card-header bg-transparent">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h3 class="mb-0">{{  $title }}</h3>
-                        </div>
-                        <div class="col-lg-2">
-                            @can('create-post')
-                                <a href="{{ route('post.create') }}" class="btn btn-sm btn-primary">Crear nueva vista</a>
-                            @endcan
-                        </div>
-                        <div class="col-lg-2">
-                            {!! Form::open(['route' => 'post.index', 'method'=>'get']) !!}
-                            <div class="form-group mb-0">
-                            {{ Form::text('search', request()->query('search'), ['class' => 'form-control form-control-sm', 'placeholder'=>'Buscar vista']) }}
-                            </div>
-
-                            {!! Form::close() !!}
-                        </div>
-                        
-                    </div>
-                </div>
                 <div class="card-body">
                     <div class="row">
                         @if (count($posts)>0)

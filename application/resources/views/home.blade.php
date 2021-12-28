@@ -5,18 +5,7 @@
         <!-- <div class="col-xl-8"> -->
         <div class="col">
             <div class="card">
-                <div class="card-header bg-transparent">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <h3 class="mb-0">{{  $title }}</h3>
-                        </div>
-                        <div class="col-lg-2">
-                            @can('create-project')
-                                <a href="{{ route('project.create') }}" class="btn btn-sm btn-primary">Crear nuevo proyecto</a>
-                            @endcan
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="card-body">
                     <div class="row">
                         @if (count($projects)>0)
@@ -60,10 +49,10 @@
                                             </center>
                                         </div>
                                         <div class="wrimagecard-topimage_title">
-                                            <h4>
+                                            <h5>
                                                 {{ $project->project_name }}
                                              
-                                            </h4>
+                                            </h5>
                                         </div>
                                         
                                     </a>
@@ -77,9 +66,9 @@
                                             </center>
                                         </div>
                                         <div class="wrimagecard-topimage_title">
-                                            <h4>
+                                            <h5>
                                                 {{ $project->project_name }}
-                                            </h4>
+                                            </h5>
                                         </div>
                                         
                                     </a>
